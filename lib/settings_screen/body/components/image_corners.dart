@@ -9,9 +9,10 @@ class ImageCorners extends StatefulWidget {
 
 class _ImageCornersState extends State<ImageCorners> {
   double val = 0;
-@override
-    Widget build(BuildContext context) {
-      return ListView(
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView(
         scrollDirection: Axis.vertical,
         children: <Widget>[
           const Text(
@@ -42,6 +43,7 @@ class _ImageCornersState extends State<ImageCorners> {
             ),
           ),
         ],
-      );
-    }
+      ),
+    );
+  }
 }

@@ -1,9 +1,7 @@
-import 'package:contact_gallary/components/themes/dark_theme.dart';
-import 'package:contact_gallary/components/themes/light_theme.dart';
 import 'package:contact_gallary/delete_screen/delete_screen.dart';
 import 'package:contact_gallary/main_screen/main_screen.dart';
 import 'package:contact_gallary/notifiers/contacts_notifier.dart';
-import 'package:contact_gallary/notifiers/night_mode.dart';
+import 'package:contact_gallary/notifiers/theme_mode.dart';
 import 'package:contact_gallary/settings_screen/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +27,8 @@ class MyApp extends StatelessWidget {
       builder: (context, value, child) => MaterialApp(
         title: 'Contact Gallary',
         themeMode: ThemeMode.light,
-        theme: (!value.selected) ? CustomLightTheme() : CustomDarkTheme(),
+        // theme: (!value.selected) ? CustomLightTheme() : CustomDarkTheme(),
+        theme: value.customTheme,
         initialRoute: "/",
         routes: {
           '/': (context) => const MainScreen(),

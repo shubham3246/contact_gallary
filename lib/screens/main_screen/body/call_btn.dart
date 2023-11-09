@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class CallButton extends StatelessWidget {
-  const CallButton({super.key});
+  CallButton({super.key, required this.number});
+  String number;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class CallButton extends StatelessWidget {
           right: 7,
           child: GestureDetector(
             onTap: () {
-              // FlutterPhoneDirectCaller.callNumber(contacts[index].phone);
+              FlutterPhoneDirectCaller.callNumber(number);
             },
             child: Container(
               width: 60, // Adjust the width as needed

@@ -1,4 +1,4 @@
-import 'package:contact_gallary/notifiers/theme_mode.dart';
+import 'package:contact_gallary/providers/theme_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,14 @@ class BGColors extends StatelessWidget {
         onTap: () {
           value.setTheme("custom", color, null);
         },
-        child: CircleAvatar(radius: 20, backgroundColor: bg),
+        child: Container(
+          margin: const EdgeInsets.only(right: 10),
+          child: CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.black45,
+            child: CircleAvatar(radius: 19, backgroundColor: bg),
+          ),
+        ),
       ),
     );
   }

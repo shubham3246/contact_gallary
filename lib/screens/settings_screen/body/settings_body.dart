@@ -1,5 +1,4 @@
-import 'package:contact_gallary/settings_screen/body/components/image_corners.dart';
-import 'package:contact_gallary/settings_screen/body/components/pick_bg_color.dart';
+import 'package:contact_gallary/screens/settings_screen/body/components/pick_bg_color.dart';
 import 'package:flutter/material.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -15,7 +14,7 @@ class SettingsBody extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ImageCorners(),
+          // ImageCorners(),
           PickBGColor(),
           // PickAppbarColor(),
           SizedBox(

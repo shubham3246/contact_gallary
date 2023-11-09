@@ -1,4 +1,4 @@
-import 'package:contact_gallary/notifiers/contacts_notifier.dart';
+import 'package:contact_gallary/providers/contacts_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,11 +11,11 @@ class DeleteContacts extends StatelessWidget {
       builder: (context, contacts, child) => ElevatedButton(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
+          padding: MaterialStateProperty.all(EdgeInsets.all(0)),
           // backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent),
         ),
         onPressed: () {
           contacts.deleteSelected();
-          // deleteCallBack();
         },
         child: const Icon(
           Icons.delete,

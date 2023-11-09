@@ -1,4 +1,4 @@
-import 'package:contact_gallary/notifiers/theme_mode.dart';
+import 'package:contact_gallary/providers/theme_mode.dart';
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 

@@ -5,17 +5,30 @@ import 'package:flutter/material.dart';
 
 class ContactsNotifier extends ChangeNotifier {
   List<MyContacts> contacts = [];
+
+  //same check boxes are use for call icon visibility and delete checkboxes
   List<bool> checkBoxes = [];
 
   void setContacts() async {
-    print("getting contacts");
     contacts = await getObjectsFromSharedPreferences();
     checkBoxes = List<bool>.filled(contacts.length, false);
     notifyListeners();
   }
 
+  //for delete screen checkboxes
   void toggleCheckboxes(int index) async {
     checkBoxes[index] = !checkBoxes[index];
+    notifyListeners();
+  }
+
+  //for call btn icon visibility
+  void toggleRadioBtns(int index) async {
+    for (int i = 0; i < checkBoxes.length; i++) {
+      if (i == index)
+        checkBoxes[i] = true;
+      else
+        checkBoxes[i] = false;
+    }
     notifyListeners();
   }
 

@@ -1,4 +1,4 @@
-import 'package:contact_gallary/settings_screen/body/components/bg_colors.dart';
+import 'package:contact_gallary/screens/settings_screen/body/components/bg_colors.dart';
 import 'package:flutter/material.dart';
 
 class PickBGColor extends StatefulWidget {
@@ -15,16 +15,16 @@ class _PickBGColorState extends State<PickBGColor> {
         scrollDirection: Axis.vertical,
         children: const [
           Text(
-            "Select Background Color :",
+            "Select UI Color :",
             style: TextStyle(fontSize: 18),
           ),
           Row(
             children: [
-              BGColors(color: "red", bg: Colors.redAccent),
-              BGColors(color: "yellow", bg: Colors.yellowAccent),
-              BGColors(color: "green", bg: Colors.green),
-              BGColors(color: "blue", bg: Colors.lightBlueAccent),
-              BGColors(color: "purple", bg: Colors.purple),
+              BGColors(color: "red", bg: Color(0xff011b2b)),
+              BGColors(color: "yellow", bg: Color(0xff486280)),
+              BGColors(color: "green", bg: Color(0xffe19b51)),
+              BGColors(color: "blue", bg: Color(0xffffffff)),
+              BGColors(color: "purple", bg: Color(0xff4ba6bc)),
             ],
           )
         ],

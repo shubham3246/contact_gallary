@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:contact_gallary/components/confirmation_msgs/saved_contact.dart';
-import 'package:contact_gallary/notifiers/contacts_notifier.dart';
+import 'package:contact_gallary/providers/contacts_notifier.dart';
 import 'package:contact_gallary/save/file_operations/select_image.dart';
 import 'package:contact_gallary/save/save.dart';
 import 'package:flutter/material.dart';
@@ -21,14 +21,17 @@ class _BuildBottomState extends State<BuildBottom> {
   @override
   Widget build(BuildContext bottomContext) {
     return Container(
+      // width: double.maxFinite,
       margin: const EdgeInsets.only(top: 15),
       padding: const EdgeInsets.only(left: 20, right: 25),
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextField(
             onChanged: (newText) {
               name = newText;
             },
+            style: const TextStyle(color: Colors.black),
             decoration: const InputDecoration(
               hintText: "Enter your name",
               hintStyle: TextStyle(color: Colors.grey),
@@ -38,6 +41,7 @@ class _BuildBottomState extends State<BuildBottom> {
             onChanged: (newText) {
               phoneNo = newText;
             },
+            style: const TextStyle(color: Colors.black),
             decoration: const InputDecoration(
               hintText: "Enter your phone number",
               hintStyle: TextStyle(color: Colors.grey),
@@ -87,7 +91,7 @@ class _BuildBottomState extends State<BuildBottom> {
               child: const Text("Save"),
             ),
           ),
-          contactSaved(contact_saved: contact_saved)
+          ContactSaved(contact_saved: contact_saved)
         ],
       ),
     );

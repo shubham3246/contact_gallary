@@ -7,12 +7,12 @@ import 'package:contact_gallary/save/save.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BuildBottom extends StatefulWidget {
+class AddContactBottom extends StatefulWidget {
   @override
-  State<BuildBottom> createState() => _BuildBottomState();
+  State<AddContactBottom> createState() => _BuildBottomState();
 }
 
-class _BuildBottomState extends State<BuildBottom> {
+class _BuildBottomState extends State<AddContactBottom> {
   String phoneNo = "";
   String name = "";
   String tempImagePath = "";
@@ -33,7 +33,7 @@ class _BuildBottomState extends State<BuildBottom> {
             },
             style: const TextStyle(color: Colors.black),
             decoration: const InputDecoration(
-              hintText: "Enter your name",
+              hintText: "Enter name",
               hintStyle: TextStyle(color: Colors.grey),
             ),
           ),
@@ -43,10 +43,10 @@ class _BuildBottomState extends State<BuildBottom> {
             },
             style: const TextStyle(color: Colors.black),
             decoration: const InputDecoration(
-              hintText: "Enter your phone number",
+              hintText: "Enter phone number",
               hintStyle: TextStyle(color: Colors.grey),
             ),
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.phone,
           ),
           GestureDetector(
             onTap: () async {
@@ -73,9 +73,14 @@ class _BuildBottomState extends State<BuildBottom> {
                   setState(() {
                     contact_saved = true;
                   });
+                  print("in add contact cottomsheet--");
+                  // () {
                   newList.setContacts();
+                  print("in add contact cottomsheet");
+                  // };
+
                   Future.delayed(
-                    Duration(milliseconds: 11),
+                    Duration(milliseconds: 600),
                     () => {
                       setState(() {
                         contact_saved = false;
@@ -83,7 +88,7 @@ class _BuildBottomState extends State<BuildBottom> {
                     },
                   );
                   Future.delayed(
-                    Duration(milliseconds: 14),
+                    Duration(milliseconds: 700),
                     () => Navigator.pop(bottomContext),
                   );
                 }
@@ -91,7 +96,7 @@ class _BuildBottomState extends State<BuildBottom> {
               child: const Text("Save"),
             ),
           ),
-          ContactSaved(contact_saved: contact_saved)
+          if (contact_saved) const ContactSaved(),
         ],
       ),
     );

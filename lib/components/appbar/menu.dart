@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_breakpoints.dart';
 
 import '../../providers/contacts_notifier.dart';
-import '../bottom_sheet/bottomSheet.dart';
+import '../bottom_sheet/add_contact_bottomsheet.dart';
 import 'appbar_title_size.dart';
 
 class CustomMenu extends StatelessWidget {
@@ -14,11 +14,6 @@ class CustomMenu extends StatelessWidget {
     final bool isMobile = ResponsiveBreakpoints.of(context).equals("MOBILE");
     double titleSize = getAppbarTitleSize(context);
     return PopupMenuButton(
-      child: (!isMobile)
-          ? Padding(
-              padding: EdgeInsets.all(20),
-              child: Icon(Icons.menu, size: titleSize))
-          : null,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
@@ -28,11 +23,11 @@ class CustomMenu extends StatelessWidget {
         if (choice == "Add contact") {
           showModalBottomSheet(
             context: context,
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: double.maxFinite,
             ),
             builder: (BuildContext buildSheetContext) {
-              return BuildBottom();
+              return AddContactBottom();
             },
           );
         } else if (choice == "Delete contact") {
@@ -63,6 +58,11 @@ class CustomMenu extends StatelessWidget {
           ),
         ];
       },
+      child: (!isMobile)
+          ? Padding(
+              padding: EdgeInsets.all(20),
+              child: Icon(Icons.menu, size: titleSize))
+          : null,
     );
   }
 }

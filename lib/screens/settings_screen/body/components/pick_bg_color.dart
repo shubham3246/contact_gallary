@@ -10,9 +10,10 @@ class PickBGColor extends StatefulWidget {
 class _PickBGColorState extends State<PickBGColor> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Flexible(
       child: ListView(
         scrollDirection: Axis.vertical,
+        shrinkWrap: true,
         children: const [
           Text(
             "Select UI Color :",

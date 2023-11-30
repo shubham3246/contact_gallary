@@ -18,7 +18,8 @@ class BGColors extends StatelessWidget {
           margin: const EdgeInsets.only(right: 10),
           child: CircleAvatar(
             radius: 20,
-            backgroundColor: Colors.black45,
+            backgroundColor:
+                (value.isLightThemeMode) ? Colors.black45 : Colors.white,
             child: CircleAvatar(radius: 19, backgroundColor: bg),
           ),
         ),

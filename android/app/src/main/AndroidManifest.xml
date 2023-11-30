@@ -1,6 +1,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <queries>-->
+<!--        &lt;!&ndash; To open phone's dialer app &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.DIAL" />-->
+<!--            <data android:scheme="tel" />-->
+<!--        </intent>-->
+<!--        &lt;!&ndash; To send SMS messages &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.SENDTO" />-->
+<!--            <data android:scheme="smsto" />-->
+<!--        </intent>-->
+<!--&lt;!&ndash;        &lt;!&ndash; To open email app &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <intent>&ndash;&gt;-->
+<!--&lt;!&ndash;            <action android:name="android.intent.action.SEND" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <data android:mimeType="*/*" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </intent>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; To opens https URLs &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <intent>&ndash;&gt;-->
+<!--&lt;!&ndash;            <action android:name="android.intent.action.VIEW" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <data android:scheme="https" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </intent>&ndash;&gt;-->
+<!--    </queries>-->
+
+<!--    <uses-permission android:name="android.permission.SEND_SMS"/>-->
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <application
-        android:label="contact_gallary"
+        android:label="Contact Gallary"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

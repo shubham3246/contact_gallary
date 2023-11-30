@@ -10,8 +10,10 @@ class ContactsNotifier extends ChangeNotifier {
   List<bool> checkBoxes = [];
 
   void setContacts() async {
+    print("inside setcontact");
     contacts = await getObjectsFromSharedPreferences();
     checkBoxes = List<bool>.filled(contacts.length, false);
+    print(checkBoxes.length);
     notifyListeners();
   }
 
@@ -37,7 +39,7 @@ class ContactsNotifier extends ChangeNotifier {
     for (int index = 0; index < contacts.length; index++) {
       if (checkBoxes[index] == false) temp.add(contacts[index]);
     }
-    // Todo : delete images before this
+
     Delete.deleteContacts(contacts, checkBoxes);
     saveObjectsInSharedPreferences(temp, false);
     setContacts();

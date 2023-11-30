@@ -7,7 +7,7 @@ import 'package:image_cropper/image_cropper.dart';
 Future<File?> getCroppedImage(XFile pickedFile) async {
   final croppedFile = await ImageCropper().cropImage(
       sourcePath: pickedFile.path,
-      aspectRatio: const CropAspectRatio(ratioX: 5, ratioY: 4));
+      aspectRatio: const CropAspectRatio(ratioX: 18, ratioY: 17));
   if (croppedFile == null) return null;
   return File(croppedFile.path);
 }
